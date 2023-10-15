@@ -16,17 +16,18 @@ export default function Home({ property }) {
   return (
     <Layout>
       <Hero />
-      <FeaturedListing data={data} />
+      {/* <FeaturedListing data={data} /> */}
       <WhyChooseUs />
-      <PropertyListing data={data} />
-      <Testimonial />
+      {/* <PropertyListing data={data} /> */}
+      {/* <Testimonial /> */}
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/properties?populate=*`);
-  const property = await res.json();
+  // const res = await fetch(`${API_URL}/api/properties?populate=*`);
+  // const property = await res.json();
+  const property = [];
 
   return {
     props: { property },

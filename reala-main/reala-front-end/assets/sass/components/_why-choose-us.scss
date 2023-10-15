@@ -1,5 +1,8 @@
 .wChoose {
+  background-color: $color-dark;
+  color: $color-tertiary;
   &__intro {
+    color: $color-tertiary;
     padding: 1rem;
     img {
         border-radius: 5px;
@@ -7,12 +10,14 @@
     }
   }
   &__content {
+    color: $color-tertiary;
     padding: 1rem 1rem 1rem 4rem;
     @include media-breakpoint-down(xxl) {
       padding: 15px;
     }
     &__item {
       text-align: center;
+      color: $color-dark;
       padding: 20px;
       background-color: $color-light;
       border-radius: 5px;

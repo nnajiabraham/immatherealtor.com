@@ -12,17 +12,17 @@ const WhyChooseUs = () => {
         <div className="row">
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <div className="wChoose__intro">
-              <SectionTitle title="Why Choose Reala" position="left" />
-              <p className="fs-4">keep calm, and reala on.</p>
+              {/* <SectionTitle title="Why Choose Reala" position="left" /> */}
+              <div className={`section-title left`}>
+                <h1 style={{color: "#fff!important"}}>{"Why Choose Imma?"}</h1>
+                {/* <h1 className="text-white">{"Why Choose Imma"}</h1> */}
+              </div>
+              {/* <p className="fs-4">keep calm, I've got your back.</p> */}
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptatem distinctio illum iure deserunt eum mollitia.
+                Choosing Imma as your real estate agent means partnering with someone who brings unmatched enthusiasm and a fresh, innovative approach to the market.
+                Imma's dedication to understanding your unique needs ensures that your real estate aspirations aren't just met—they're exceeded.
+                Whether you're looking to buy your first home, invest in lucrative properties, or diversify your portfolio, Imma is committed to turning your real estate dreams into tangible achievements.
               </p>
-              <img
-                src="images/wChoose2.jpg"
-                alt="wChoose"
-                className="img-fluid"
-              />
             </div>
           </div>
           <div className="col-lg-8 col-md-6">
