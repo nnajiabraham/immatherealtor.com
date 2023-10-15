@@ -14,20 +14,20 @@ const Footer = () => {
         <div className="row footer-padding">
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <div className="footer__logo">
-              <h1>Reala.</h1>
+              <h1>ImmaTheRealtor.</h1>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <div className="footer__content">
-              <h3>Venue Location</h3>
+              <h3>Brokerage location</h3>
               <ul>
                 <li>
-                  329 Queensberry Street, North Melbourne VIC 3051, Australia.
+                  9-196 Osborne St Winnipeg, MB R3L 1Z3
                 </li>
                 <li>
                   <GoLocation />{" "}
                   <a
-                    href="https://www.google.com/maps/place/United+States/@37.2755783,-104.6571311,5z/data=!3m1!4b1!4m5!3m4!1s0x54eab584e432360b:0x1c3bb99243deb742!8m2!3d37.09024!4d-95.712891"
+                    href="https://maps.app.goo.gl/JLmbW7dqkWBX7Jat9"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -42,7 +42,7 @@ const Footer = () => {
               <h3>Social Connection</h3>
               <p>You should connect social area for any update</p>
               <ul>
-                <li>
+                {/* <li>
                   <a
                     href="https://www.facebook.com"
                     aria-label="Facebook"
@@ -59,10 +59,10 @@ const Footer = () => {
                   >
                     <FaTwitter />
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
-                    href="https://www.instagram.com"
+                    href="https://www.instagram.com/imma_drealtor"
                     aria-label="Instagram"
                     className="icon"
                   >
@@ -72,7 +72,7 @@ const Footer = () => {
                 <li>
                   <a
                     aria-label="Whatsapp"
-                    href="tel:+880123456789"
+                    href="tel:+1 (431) 334-7223"
                     className="icon"
                   >
                     <FaWhatsapp />

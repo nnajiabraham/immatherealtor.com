@@ -282,15 +282,15 @@ const PropertyPage = ({ properties, slug }) => {
 
 export default PropertyPage;
 
-export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/api/properties?populate=*`);
-  const allProperty = await res.json();
-  const properties = allProperty.data;
+// export async function getServerSideProps({ query: { slug } }) {
+//   const res = await fetch(`${API_URL}/api/properties?populate=*`);
+//   const allProperty = await res.json();
+//   const properties = allProperty.data;
 
-  return {
-    props: {
-      properties,
-      slug,
-    },
-  };
-}
+//   return {
+//     props: {
+//       properties,
+//       slug,
+//     },
+//   };
+// }

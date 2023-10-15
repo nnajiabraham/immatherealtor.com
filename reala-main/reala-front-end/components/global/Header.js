@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container">
         <Navbar className="p-0" bg="none" expand="lg">
           <Link className="navbar-brand" href="/">
-            <h2 className="logo">Reala.</h2>
+            <h2 className="logo">ImmaTheRealtor.</h2>
           </Link>
           <Navbar.Toggle
             className="navbar-toggler collapsed"
@@ -35,16 +35,16 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" href="/all-property">
                   All Property
                 </Link>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <Link className="nav-link" href="/blogs">
                   Blog
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" href="/contact">
                   Contact
@@ -53,13 +53,13 @@ const Header = () => {
             </ul>
             <ul className="navbar-nav navbar__right d-block d-lg-none">
               <li className="nav-item">
-                <Link className="nav-link" href="mailto:admin@gmail.com">
-                  <MdOutlineMailOutline /> admin@gmail.com
+                <Link className="nav-link" href="mailto:Immatherealtor@gmail.com">
+                  <MdOutlineMailOutline /> Immatherealtor@gmail.com
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="tel:0123456789">
-                  <MdCall /> 0123456789
+                <Link className="nav-link" href="tel:+1 (431) 334-7223">
+                  <MdCall /> +1 (431) 334-7223
                 </Link>
               </li>
             </ul>
@@ -69,17 +69,17 @@ const Header = () => {
             <li className="nav-item">
               <Link
                 className="nav-link d-flex gap-2 align-items-center"
-                href="mailto:admin@gmail.com"
+                href="mailto:Immatherealtor@gmail.com"
               >
-                <MdOutlineMailOutline /> admin@gmail.com
+                <MdOutlineMailOutline /> Immatherealtor@gmail.com
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 className="nav-link d-flex gap-2 align-items-center"
-                href="tel:0123456789"
+                href="tel:+1 (431) 334-7223"
               >
-                <MdCall /> 0123456789
+                <MdCall /> +1 (431) 334-7223
               </Link>
             </li>
           </ul>

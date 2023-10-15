@@ -47,11 +47,11 @@ const Blogs = ({ blogs }) => {
 
 export default Blogs;
 
-export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/blogs?populate=*`);
-  const blogs = await res.json();
+// export async function getStaticProps() {
+//   const res = await fetch(`${API_URL}/api/blogs?populate=*`);
+//   const blogs = await res.json();
 
-  return {
-    props: { blogs },
-  };
-}
+//   return {
+//     props: { blogs },
+//   };
+// }

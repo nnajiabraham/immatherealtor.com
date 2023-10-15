@@ -102,15 +102,15 @@ const SingleBlog = ({ blogs, slug }) => {
 
 export default SingleBlog;
 
-export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/api/blogs?populate=*`);
-  const allBlogs = await res.json();
-  const blogs = allBlogs.data;
+// export async function getServerSideProps({ query: { slug } }) {
+//   const res = await fetch(`${API_URL}/api/blogs?populate=*`);
+//   const allBlogs = await res.json();
+//   const blogs = allBlogs.data;
 
-  return {
-    props: {
-      blogs,
-      slug,
-    },
-  };
-}
+//   return {
+//     props: {
+//       blogs,
+//       slug,
+//     },
+//   };
+// }
