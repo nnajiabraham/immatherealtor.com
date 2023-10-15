@@ -26,8 +26,8 @@ export default function Layout({ title, keywords, description, children }) {
 }
 
 Layout.defaultProps = {
-  title: "Reala - Next app",
-  description: "Property Listing NEXT.JS, Strapi app",
-  keywords: "reala, real estate",
+  title: "Imma The Realtor",
+  description: "Your Friendly Neighborhood Real Estate Agent",
+  keywords: "Real Estate Agent Winnipeg Manitoba",
 };
 
