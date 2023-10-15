@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
+    />
+    <link href="" rel="icon" />
+    <title>Reala - Property Listing NEXT.JS, Strapi app</title>
+    <meta
+      name="description"
+      content="Reala - Property Listing NEXT.JS, Strapi app"
+    />
+    <!-- Stylesheet
+============================== -->
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome Icon -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/font-awesome/css/all.min.css"
+    />
+    <!-- Magnific Popup -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/magnific-popup/magnific-popup.min.css"
+    />
+    <!-- Highlight Syntax -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/highlight.js/styles/github.css"
+    />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+  </head>
+
+  <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- Preloader End -->
+    <!-- Document Wrapper   
+=============================== -->
+    <div id="main-wrapper">
+      <!-- Header
+  ============================ -->
+      <header id="header" class="sticky-top">
+        <!-- Navbar -->
+        <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+          <div class="container-fluid">
+            <!-- Sidebar Toggler -->
+            <button
+              id="sidebarCollapse"
+              class="navbar-toggler d-block d-md-none"
+              type="button"
+            >
+              <span></span><span class="w-75"></span><span class="w-50"></span>
+            </button>
+            <!-- Logo -->
+            <a class="logo ml-md-3" href="index.html" title="prego Template">
+              <h1>Reala.</h1>
+            </a>
+            <!-- Logo End -->
+            <!-- Navbar Toggler -->
+            <button
+              class="navbar-toggler ml-auto"
+              type="button"
+              data-toggle="collapse"
+              data-target="#header-nav"
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </nav>
+        <!-- Navbar End -->
+      </header>
+      <!-- Header End -->
+      <!-- Content
+  ============================ -->
+      <div id="content" role="main">
+        <!-- Sidebar Navigation
+	============================ -->
+        <div class="idocs-navigation bg-light">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#bookshelf_getstart"
+                >Getting Started</a
+              >
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#bookshelf_installation"
+                    >Installation</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bookshelf_folder_structure"
+                >Folder Structure</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bookshelf_more_customization"
+                >Template Customization</a
+              >
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#bookshelf_sass">Sass</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#bookshelf_typography"
+                    >Typography</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#bookshelf_color">Color Setting</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bookshelf_source_credits"
+                >Source & Credits</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bookshelf_support">Support</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#bookshelf_templates">More Templates</a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#bookshelf_changelog">Changelog</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#v1-1">v1.1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#v1-0">v1.0</a>
+                </li>
+              </ul>
+            </li> -->
+          </ul>
+        </div>
+        <!-- Docs Content
+	============================ -->
+        <div class="idocs-content">
+          <div class="container">
+            <!-- Getting Started
+		============================ -->
+            <section id="bookshelf_getstart">
+              <h1>Reala - Property Listing NEXT.JS, Strapi app</h1>
+              <p class="lead">
+                Thank you for purchasing Reala - Property Listing NEXT.JS,
+                Strapi app
+              </p>
+              <hr />
+              <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                  <ul class="list-unstyled">
+                    <li><strong>Version:</strong> 1.0</li>
+                    <li>
+                      <strong>Author:</strong>
+                      <a
+                        href="https://themeforest.net/user/themeatelier"
+                        target="_blank"
+                        >ThemeAtelier</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong class="font-weight-700">Created:</strong> 28
+                      January, 2023
+                    </li>
+                    <li><strong>Update:</strong> 09 June, 2023</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="alert alert-info">
+                If you have any questions that are beyond the scope of this help
+                file, Please feel free to email via
+                <a
+                  target="_blank"
+                  href="https://themeforest.net/user/themeatelier/#contact"
+                  >Profile contact form</a
+                >
+                or item's support page.
+              </p>
+              <div class="alert alert-success">
+                We are available for freelance work for any <code>HTML</code>,
+                <code>React</code>, <code>NextJS</code>,
+                <code>WordPress projects</code>. <br />Write us at
+                <a href="www.themeatelierbd@gmail.com"
+                  >themeatelierbd@gmail.com</a
+                >
+                and will reply to you within 24 hours.
+              </div>
+            </section>
+            <hr class="divider" />
+            <!-- ========== installation ========== -->
+            <section id="bookshelf_installation">
+              <h2>Installation</h2>
+              <p class="lead">
+                Follow the steps below to setup your site template:
+              </p>
+              <ul>
+                <li>
+                  Unzip the downloaded package and open the
+                  <strong>/reala-main</strong> folder to find frontend & backend
+                  files
+                  <img
+                    class="img-fluid img-thumbnail"
+                    src="assets/images/main-file.png"
+                    alt=""
+                  />
+                </li>
+                <li class="font-weight-bold fs-">
+                  <h5 class="mb-0">Frontend Setup:</h5>
+                  <p>
+                    Open <strong>reala-frontend</strong> folder in your terminal
+                    and follow the steps given below
+                  </p>
+                  <ul>
+                    <li class="font-weight-500">
+                      Run <code>npm install</code> in terminal to install all
+                      the uses packages.
+                    </li>
+                    <li class="font-weight-bold">
+                      <h5 class="mb-0">
+                        In case you don't have Node.js & NPM package manager on
+                        your machine, here how to add it:
+                      </h5>
+                      <ul>
+                        <li class="font-weight-500">
+                          Download Node.js from browser. This will automatically
+                          add npm with it.
+                        </li>
+                        <li class="font-weight-500">
+                          Open Command Prompt and check node and npm versions to
+                          make sure they have been added.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <h5>
+                  After installing packages its time to setup your
+                  <code>.env</code> file with your api and necessary links.
+                  <strong
+                    >[NOTE: you will find your api after setting the backend
+                    file]</strong
+                  >
+                </h5>
+
+                <li class="font-weight-bold">
+                  <strong>NEXT_PUBLIC_API_URL</strong> is for api url. Replace
+                  your api link with <code>API_URL</code>
+                </li>
+                <li class="font-weight-bold">
+                  <strong>NEXT_PUBLIC_MAILCHAIMP_LINK</strong> is for mailchimp
+                  url. Replace your api link with <code>MAILCHAIMP_LINK</code>
+                </li>
+                <li class="font-weight-bold">
+                  <strong>NEXT_PUBLIC_CONTACTFROM</strong> is for fromspree
+                  link. Replace your api link with <code>FROMSPREE</code>.
+                </li>
+                <img class="img-fluid img-thumbnail" src="assets/images/env.png" alt="">
+                here is a sample you do that.
+              </ul>
+              <h4>
+                Now you're ready to start the project. simply run
+                <code>npm run dev</code> to run the project
+              </h4>
+              <ul>
+                <li class="font-weight-bold">
+                  <h5 class="mb-0">Backend Setup:</h5>
+                  <p>
+                    Open <strong>reala-backend</strong> folder in your terminal
+                    and follow the steps given below
+                  </p>
+                  <ul>
+                    <li class="font-weight-500">
+                      Run <code>npm install</code> in terminal to install all
+                      the uses packages.
+                    </li>
+                    <li class="font-weight-500">
+                      Now you need to set <code>.env</code>
+                    </li>
+                    <li class="font-weight-500">
+                      <strong
+                        >To collect <code>.env</code> data you have to create a
+                        <code>stapi</code> project. There's no others way :((
+                      </strong>
+                    </li>
+                    <li class="font-weight-500">
+                      Create a separate file by running
+                      <code>npx create-strapi-app@latest my-project</code> &
+                      grave the <code>.env</code> form there and paste it in
+                      <strong>reala-backend</strong> file.
+                    </li>
+                    <h4>
+                      Now you're ready to start the project. simply run
+                      <code>npm run develop</code> to run the project
+                    </h4>
+                  </ul>
+                </li>
+                <h4>
+                  Once you run the project you need to register on
+                  <strong>strapi</strong> and change some
+                  <strong>settings</strong>.
+                </h4>
+                <ul>
+                  <li class="font-weight-500">
+                    To do so go to
+                    <strong>Settings > Roles > Authenticated</strong>
+                  </li>
+                  <li class="font-weight-500">
+                    Click on <strong>Blog</strong> and checkmark them like this
+                    photo
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="assets/images/blog.png"
+                      alt=""
+                    />
+                  </li>
+                  <li class="font-weight-500">
+                    Click on <strong>Property</strong> and checkmark them like
+                    this photo
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="assets/images/property.png"
+                      alt=""
+                    />
+                  </li>
+                  <li class="font-weight-500">
+                    Click on <strong>Category</strong> and checkmark them like
+                    this photo
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="assets/images/category.png"
+                      alt=""
+                    />
+                  </li>
+                  <li class="font-weight-500">
+                    Click on <strong>Upload</strong> and checkmark them like
+                    this photo
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="assets/images/upload.png"
+                      alt=""
+                    />
+                  </li>
+                  <li class="font-weight-500">
+                    Click on <strong>Users-permissions</strong> and checkmark
+                    them like this photo
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="assets/images/user-permissions.png"
+                      alt=""
+                    />
+                  </li>
+                </ul>
+                <h3>
+                  You need to do exact same <strong>Settings</strong> in
+                  <strong>Public</strong> section too. For that go to
+                  <strong>Settings > Roles > Public</strong> and change exact
+                  same things you did in <strong>Authenticated</strong>
+                </h3>
+              </ul>
+              <ul>
+                <li class="font-weight-bold">
+                  <h5 class="mb-0">Development server:</h5>
+                  <ul>
+                    <li class="font-weight-500">
+                      Now add your content in <strong>Strapi</strong> and deploy
+                      it to get a <code>api</code>
+                    </li>
+                    <li class="font-weight-500">
+                      There are many server site deploy platform exist on
+                      internet. However, we suggest
+                      <a href="https://aws.amazon.com/lightsail/"
+                        >amazon lightsail</a
+                      >
+                      to do so. We have found this very easy to navigate and
+                      use.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+            <hr class="divider" />
+
+            <hr class="divider" />
+            <!-- ========== Customization ========== -->
+            <section id="bookshelf_folder_structure">
+              <h2>Folder Structure</h2>
+              <pre> <code class="html">
+  |——reala
+  |  |
+  |  |——assets/           
+  |  |    |sass/                   --abstracts, base, components, main.scss;
+  |  |——components/                --Component Files & Folder; 
+  |  |    |global/                 --header.js, footer.js, layout.js, section-title.js; 
+  |  |    |js files/               --(js files for all components. These are called in pages components)
+  |  |——config/                    
+  |  |    |index.js/               --config file
+  |  |——pages/                     --pages files; 
+  |  |    |api/                    
+  |  |    |blogs/                  --[slug].js, index.js
+  |  |    |Property/                 --[slug].js, index.js
+  |  |    |_app.js                 
+  |  |    |_document.js                 
+  |  |    |contact.js                 
+  |  |    |index.js                 
+  |  |——public/                    
+  |  |    |——images/              --(All static images are here);
+  |  |    |favicon.ico
+  |  |——.env/                     --(All private links and api)
+  |  |——.gitignore/               --(github ignoring file)
+  |  |——package.json              -- npm config: dependencies list;
+  |  |——package-lock.json               
+          </code> </pre>
+            </section>
+            <hr class="divider" />
+
+            <section id="bookshelf_more_customization">
+              <h2>Template Customization</h2>
+            </section>
+            <!-- sass customization -->
+            <div id="bookshelf_sass">
+              <h3>
+                <strong
+                  >And to change styles you need to go to
+                  <code>sass</code> folder inside
+                  <code>src/assets</code></strong
+                >
+              </h3>
+              <h6>
+                <strong>Process of customize style with SCSS 👇</strong>
+              </h6>
+              <p>
+                We have added SASS <code>.scss</code> files in template. If you know how to use SASS you can
+                change sass files.
+              </p>
+              <p>
+                Open the
+                <code
+                  >assets/sass/base/_base.scss,
+                  assets/sass/base/_typography.scss</code
+                >
+                and Edit the values according to your needs. If you need more
+                Advanced Setup then you can Edit the Respective Files yourself
+                which have been branched inside the same Folder. It is
+                completely at your discretion only to include the Required
+                <code>.scss</code> Files you need to minimize the amount of CSS
+                & including only the Styles of the Blocks you need. This can be
+                setup in your <code>main.scss</code> File.
+              </p>
+              <p>
+                <strong>
+                  All colors of template operating from
+                  <code>_variable.scss</code> file. Open
+                  <code>sass/abstracts/_variable.scss</code> to change colors as
+                  you want.
+                </strong>
+              </p>
+              <p>
+                <strong>
+                  To customize responsive layout you have to open
+                  <code>sass/abstracts/mixins.scss</code>. There you can change
+                  media queries value as you want.
+                </strong>
+              </p>
+              <p>
+                <strong>
+                  And All components based scss are in
+                  <code>sass/components</code>. Find the page you want to change
+                  css there.
+                </strong>
+              </p>
+            </div>
+            <hr class="divider" />
+            <section id="bookshelf_typography">
+              <h2>Typography</h2>
+              <h4>Font Family</h4>
+              <p>
+                We used two different font-family. One for Heading and title and
+                another one for rest. You can simply use another font-family
+                from Google Font by importing it inside
+                <code>assets/sass/base/_typography.scss</code>.
+              </p>
+              <pre><code class="html">
+
+  &lt;!-- ========== Fonts ========== --&gt;
+  &lt;!--====== Heading font ======--&gt;
+  &#64;import url(&quot;https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap&quot;)
+  &lt;!--====== Body font ======--&gt;
+  &#64;import url(&quot;https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap&quot;)
+  &lt;!-- ========== Add your fonts here or you can replace these two ========== --&gt;
+
+  &lt;!--====== Font Family ======--&gt;
+  &#36;font-heading: &quot;Raleway&quot;, sans-serif;
+  &#36;font-display: &quot;poppins&quot;, sans-serif;
+
+
+</code></pre>
+              <p>
+                After importing fonts inside <code>_typography.scss</code> of
+                index file you just need to add your font family variable in
+                same file. Set your chosen family to
+                <code>$font-heading</code> or <code>$font-display</code> as
+                their value just like the example given up
+              </p>
+            </section>
+            <hr class="divider" />
+            <!-- ========== Color setting ========== -->
+            <section id="bookshelf_color">
+              <h2>Color Settings</h2>
+              <h5>
+                we have used two different way of changing color. Both way are
+                so easy to understand for you.
+              </h5>
+              <p>
+                One is in <code>_variable.scss</code> file in
+                <code>assets/sass/abstracts/_variable.scss</code> You can change
+                color code here as you want. That will work fine.
+                <img
+                  class="img-fluid img-thumbnail"
+                  src="assets/images/color-setting.png"
+                  alt="color-img"
+                />
+              </p>
+            </section>
+            <hr class="divider" />
+
+            <!-- ========== Sources & Credits ========== -->
+            <section id="bookshelf_source_credits">
+              <h2>Source & Credits</h2>
+              <h4>Icons:</h4>
+              <ul>
+                <li>
+                  React Icons -
+                  <a
+                    target="_blank"
+                    href="https://react-icons.github.io/react-icons/"
+                    >https://react-icons.github.io</a
+                  >
+                </li>
+              </ul>
+              <h4>Fonts:</h4>
+              <ul>
+                <li>
+                  Google Font -
+                  <a target="_blank" href="https://fonts.google.com/"
+                    >https://fonts.google.com/</a
+                  >
+                </li>
+              </ul>
+              <h4>Scripts:</h4>
+              <ul>
+                <li>
+                  React Bootstrap
+                  <a target="_blank" href="https://react-bootstrap.github.io/"
+                    >https://react-bootstrap.com/</a
+                  >
+                </li>
+                <li>
+                  Strapi
+                  <a target="_blank" href="https://strapi.io/"
+                    >https://strapi.io/</a
+                  >
+                </li>
+                <li>
+                  Fromspree
+                  <a target="_blank" href="https://formspree.io/"
+                    >https://formspree.io/</a
+                  >
+                </li>
+                <li>
+                  Swiper js -
+                  <a target="_blank" href="https://swiperjs.com/react"
+                    >https://swiperjs.com/react</a
+                  >
+                </li>
+                <li>
+                  MailChimp
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-mailchimp-subscribe"
+                    >https://www.npmjs.com/package/react-mailchimp-subscribe</a
+                  >
+                </li>
+                <li>
+                  React loading skeleton
+                  <a target="_blank" href="https://github.com/dvtng/react-loading-skeleton"
+                    >https://github.com/dvtng/react-loading-skeleton</a
+                  >
+                </li>
+              </ul>
+            </section>
+            <hr class="divider" />
+            <!-- ========== Supports ========== -->
+            <section id="bookshelf_support">
+              <h2>Support</h2>
+              <div class="alert alert-warning mb-4">
+                <span class="badge badge-danger text-uppercase">Note:</span>
+                While we aim to provide the best support possible, please keep
+                in mind that it only extends to verified buyers and only to
+                issues related to our template like bugs and errors. Custom
+                modifications or third party module implementations are not
+                included.
+              </div>
+              <span class="alert alert-success">
+                Submit a support ticket throuch item's support tab at
+                TemplateMonster. We well back to you within 24 hours.
+              </span>
+            </section>
+            <hr class="divider" />
+          </div>
+        </div>
+      </div>
+      <!-- Content end -->
+    </div>
+    <!-- Document Wrapper end -->
+    <!-- Back To Top -->
+    <a
+      id="back-to-top"
+      data-toggle="tooltip"
+      title="Back to Top"
+      href="javascript:void(0)"
+      ><i class="fa fa-chevron-up"></i
+    ></a>
+    <!-- ========== Javascript ========== -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Highlight JS -->
+    <script src="assets/vendor/highlight.js/highlight.min.js"></script>
+    <!-- Easing -->
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Custom Script -->
+    <script src="assets/js/theme.js"></script>
+  </body>
+</html>
