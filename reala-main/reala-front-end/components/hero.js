@@ -16,9 +16,9 @@ const Hero = () => {
           </div>
           <div className="col-lg-6">
             <div className="hero__image">
-              <img src="images/headshot2.png" alt="hero" />
+              <img src="images/headshot2.jpg" alt="hero" />
               <div className="image-two">
-                <img src="images/house.jpg" alt="hero" />
+                <img src="images/house1.jpg" alt="hero" />
               </div>
             </div>
           </div>
