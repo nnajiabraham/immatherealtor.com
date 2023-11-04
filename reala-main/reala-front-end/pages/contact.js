@@ -27,7 +27,7 @@ const Contact = () => {
     
     // Send the form data to your API route
     try {
-      const response = await axios.post(`${API_URL}/api/contact`, formData);
+      const response = await axios.post(`/api/contact`, formData);
       // Handle success - clear form, show message, etc.
       notifySuccess();
       event.target.reset();
