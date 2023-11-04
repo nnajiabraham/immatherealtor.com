@@ -2,8 +2,45 @@ import React from "react";
 import Layout from "../components/global/layout";
 import InnerPageLayout from "../components/inner-page-layout";
 import { CONTACTFROM } from "../config";
+import Link from "next/link";
+import { MdOutlineMailOutline} from "react-icons/md";
+import axios from "axios";
+import { API_URL } from "../config";
+import { toast } from 'react-toastify';
 
 const Contact = () => {
+  const [loading, setLoading] = React.useState(false);
+  const notifySuccess = () => toast.success("Message Sent!");
+  const notifyError = () => toast.error("Oops! Something went wrong");
+    // Handling form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    
+    // Construct form data payload
+    const formData = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      subject: event.target.subject.value,
+      message: event.target.message.value,
+    };
+    
+    // Send the form data to your API route
+    try {
+      const response = await axios.post(`${API_URL}/api/contact`, formData);
+      // Handle success - clear form, show message, etc.
+      notifySuccess();
+      event.target.reset();
+      console.log(response.data.message);
+    } catch (error) {
+      // Handle error - show error message, etc.
+      notifyError();
+      console.error(error);
+    }
+
+    setLoading(false);
+  };
+
   return (
     <Layout>
       <InnerPageLayout title="Need Instant Help?" />
@@ -13,23 +50,18 @@ const Contact = () => {
             <div className="row">
               <div className="col-lg-4 mb-4 mb-lg-0">
                 <div className="contact__info">
-                  <h4>Address</h4>
-                  <p>50 South New Wales , London, England</p>
-                </div>
-                <div className="contact__info">
                   <h4>Email</h4>
-                  <p>support@sample.com</p>
-                  <p>admin@gmail.com</p>
+                  <Link className="nav-link" href="mailto:Immatherealtor@gmail.com">
+                    <MdOutlineMailOutline /> Immatherealtor@gmail.com
+                  </Link>
                 </div>
                 <div className="contact__info">
                   <h4>Phone</h4>
-                  <a href="tel:+880123456789">+880123456789</a>
-                  <br />
-                  <a href="tel:+880123456789">+880123456789</a>
+                  <a href="tel:+14313347223">+1 (431) 334-7223</a>
                 </div>
               </div>
               <div className="col-lg-8">
-                <form id="contact-form" method="post" action={CONTACTFROM}>
+                <form id="contact-form" onSubmit={handleSubmit}>
                   <div className="d-lg-flex gap-lg-3 input">
                     <div className="w-100">
                       <label htmlFor="name">Name</label>
@@ -74,8 +106,8 @@ const Contact = () => {
                     />
                   </div>
                   <div className="text-center">
-                    <button type="submit" className="button-primary">
-                      Send Message
+                    <button type="submit" className="button-primary" disabled={loading} style={{backgroundColor: loading? "grey" : undefined}}>
+                      {loading ? 'Sending...' : 'Send Message'}
                     </button>
                   </div>
                 </form>
