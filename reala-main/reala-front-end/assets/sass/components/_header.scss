@@ -30,7 +30,7 @@
     padding: 0;
   }
   .logo {
-    font-size: 45px;
+    font-size: 35px;
     font-weight: 700;
     color: $color-primary;
   }
@@ -56,15 +56,18 @@
   .navbar-toggler {
     outline: none;
     border: none;
-    border-radius: 0;
-    padding: 0 10px 0 0;
+    border-radius: 5px;
+    padding: 2px;
     box-shadow: none;
+    background-color: $color-primary;
+    width: 40px;
+    height: 40px;
     .togler-icon-inner span {
       height: 3px;
       margin: 5px;
       width: 30px;
       display: block;
-      background-color: $color-dark;
+      background-color: $color-light;
       transition: all 0.3s ease;
       &:nth-child(2) {
         margin-left: auto;
@@ -87,6 +90,13 @@
     }
   }
   .navbar-brand {
+    margin-right: 0px;
+    display: flex;
+    justify-content: space-around;
+    
+    a {
+      text-align: center;
+    }
     img {
       max-width: 200px;
       display: none;
@@ -106,6 +116,7 @@
 @media screen and (max-width: 991.98px) {
   .header {
     background-color: $color-light;
+    margin-bottom: 20px;
   }
   .header {
     .container,
@@ -141,7 +152,12 @@
       overflow-y: scroll;
     }
     .navbar-brand {
-      padding: 10px 0 10px 15px;
+      // padding: 10px 0 10px 15px;
+    }
+    .header_navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
     }
   }
 }
@@ -162,6 +178,9 @@
   }
   .lang-drop {
     left: -50px;
+  }
+  .navbar-brand {
+      padding: 0 10px;
   }
 }
 
@@ -213,4 +232,9 @@
   .pages-header {
     background-color: $color-danger;
   }
+}
+
+.header_navbar {
+  background-color: $color-light;
+  color: $color-light;
 }

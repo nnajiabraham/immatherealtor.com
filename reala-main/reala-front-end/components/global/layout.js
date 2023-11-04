@@ -14,12 +14,12 @@ export default function Layout({ title, keywords, description, children }) {
 
       <Header />
       <>{children}</>
-      <span style={{
+      {/* <span style={{
         height: "10px",
         width: "100%",
         backgroundColor: "#fff",
         display: "block",
-      }}></span>
+      }}></span> */}
       <Footer />
     </>
   );

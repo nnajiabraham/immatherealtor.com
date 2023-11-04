@@ -1,5 +1,6 @@
 .footer {
-  background-color: $color-dark;
+  background-color: $color-light;
+  // background-color: $color-dark;
   &__top {
     width: 600px;
     text-align: center;
@@ -36,12 +37,17 @@
     }
   }
   &__social {
+    flex: 1;
+    h1 {
+      color: $color-primary;
+      margin-bottom: 30px;
+    }
     h3 {
-      color: $color-light;
+      color: $color-primary;
       margin-bottom: 30px;
     }
     p {
-      color: $color-light;
+      color: $color-dark;
       margin-bottom: 15px;
     }
     ul {
@@ -73,13 +79,13 @@
   }
   &__logo {
     h1 {
-      color: $color-light;
+      color: $color-primary;
       margin-bottom: 30px;
     }
   }
   &__content {
     h3 {
-      color: $color-light;
+      color: $color-primary;
       margin-bottom: 30px;
     }
     ul {

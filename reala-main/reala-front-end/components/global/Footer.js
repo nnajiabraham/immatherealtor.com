@@ -11,13 +11,22 @@ const Footer = () => {
   return (
     <div className="footer footer-padding-t">
       <div className="container">
-        <div className="row footer-padding">
-          <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-            <div className="footer__logo">
-              <h1>ImmaTheRealtor.</h1>
+        <div className="row footer-padding" style={{justifyContent: "space-evenly"}}>
+          <div className="col-lg-4 col-md-6 mb-4 mb-lg-0" style={{display: "flex", justifyContent: "center"}}>
+            <div className="footer__logo" style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center"
+            }}>
+              <h1>ImmaTheRealtor</h1>
+              <img
+                className="img-fluid"
+                src={"/images/explogo.png"}
+                alt=""
+              />
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          {/* <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <div className="footer__content">
               <h3>Brokerage location</h3>
               <ul>
@@ -36,11 +45,17 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="footer__social">
-              <h3>Social Connection</h3>
-              <p>You should connect social area for any update</p>
+          </div> */}
+          <div className="col-lg-4 col-md-6" style={{
+              display: "flex",
+              justifyContent: "center"
+            }}>
+            <div className="footer__social" style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center"
+            }}>
+              <h1>Social Connection</h1>
               <ul>
                 {/* <li>
                   <a
