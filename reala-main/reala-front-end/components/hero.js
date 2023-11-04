@@ -18,7 +18,7 @@ const Hero = () => {
             <div className="hero__image">
               <img src="images/headshot3.png" alt="hero" />
               <div className="image-two">
-                <img src="images/house1.jpg" alt="hero" />
+                <img src="images/house2.jpg" alt="hero" />
               </div>
             </div>
           </div>
