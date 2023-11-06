@@ -21,6 +21,7 @@ const Contact = () => {
     const formData = {
       name: event.target.name.value,
       email: event.target.email.value,
+      phone: event.target.phone.value,
       subject: event.target.subject.value,
       message: event.target.message.value,
     };
@@ -62,8 +63,7 @@ const Contact = () => {
               </div>
               <div className="col-lg-8">
                 <form id="contact-form" onSubmit={handleSubmit}>
-                  <div className="d-lg-flex gap-lg-3 input">
-                    <div className="w-100">
+                  <div className="w-100 input">
                       <label htmlFor="name">Name</label>
                       <input
                         name="name"
@@ -71,6 +71,29 @@ const Contact = () => {
                         required
                         type="text"
                         placeholder="Name"
+                      />
+                    </div>
+                  <div className="d-lg-flex gap-lg-3 input">
+                    <div className="w-100">
+                      <label htmlFor="phone">
+                        Phone Number
+                        <span
+                          style={{
+                            fontSize: "12px",
+                            fontStyle: "italic",
+                            color: "grey",
+                          }}
+                        >
+                          ex. (123-456-7890)
+                        </span>
+                      </label>
+                      <input
+                        name="phone"
+                        id="phone"
+                        required
+                        type="tel"
+                        placeholder="123-456-7890"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                       />
                     </div>
                     <div className="w-100">

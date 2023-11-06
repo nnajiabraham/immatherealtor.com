@@ -18,9 +18,10 @@ export default async function (req, res) {
   const message = {
     to: 'immatherealtor@gmail.com', // Replace with your email or the agent's email
     from: 'immatherealtor@gmail.com', // This needs to be the email you verified with SendGrid
+    reply_to: body.email,
     subject: `New Contact From Website: ${body.subject}`,
-    text: `Name: ${body.name}\nEmail: ${body.email}\nMessage: ${body.message}`,
-    html: `<strong>Name:</strong> ${body.name}<br><strong>Email:</strong> ${body.email}<br><strong>Message:</strong> ${body.message}`,
+    text: `Name: ${body.name}\nEmail: ${body.email}\nPhone: ${body.phone}\nMessage: ${body.message}`,
+    html: `<strong>Name:</strong> ${body.name}<br><strong>Email:</strong> ${body.email}<br><strong>Phone:</strong> ${body.phone}<br><strong>Message:</strong> ${body.message}`,
   };
 
   try {
