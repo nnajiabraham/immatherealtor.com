@@ -19,11 +19,30 @@ const Footer = () => {
               justifyContent: "center"
             }}>
               <h1>ImmaTheRealtor</h1>
+              <div style={{
+                display: "flex",
+                justifyContent: "space-between",
+
+              }}>
+              <img
+                  className="img-fluid"
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                  }}
+                  alt="EXP Realty Logo"
+                src={"/images/explogo.png"}
+              />
               <img
                 className="img-fluid"
-                src={"/images/explogo.png"}
-                alt=""
-              />
+                  src={"/images/hofitlogo.png"}
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                  }}
+                alt="Hofit Yanev Team Logo"
+                />
+              </div>
             </div>
           </div>
           {/* <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
