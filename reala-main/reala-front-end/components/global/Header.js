@@ -35,16 +35,16 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" href="/all-property">
-                  All Property
+                  Properties
                 </Link>
-              </li> */}
-              {/* <li className="nav-item">
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" href="/blogs">
                   Blog
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item">
                 <Link className="nav-link" href="/contact">
                   Contact
@@ -66,17 +66,18 @@ const Header = () => {
           </Navbar.Collapse>
 
           <ul className="navbar-nav navbar__right d-none d-lg-flex gap-2">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 className="nav-link d-flex gap-2 align-items-center"
                 href="mailto:Immatherealtor@gmail.com"
               >
                 <MdOutlineMailOutline /> Immatherealtor@gmail.com
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link
                 className="nav-link d-flex gap-2 align-items-center"
+                style={{ marginRight: "5px" }}
                 href="tel:+1 (431) 334-7223"
               >
                 <MdCall /> +1 (431) 334-7223

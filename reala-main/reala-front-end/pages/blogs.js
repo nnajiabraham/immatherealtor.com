@@ -6,7 +6,8 @@ import Pagination from "../components/pagination";
 import { API_URL } from "../config";
 
 const Blogs = ({ blogs }) => {
-  const { data } = blogs;
+  const data = [];
+  // const { data } = blogs;
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,7 +20,7 @@ const Blogs = ({ blogs }) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <Layout title="All Property Blogs">
+    <Layout title="Blogs-ImmaTheRealtor">
       <InnerPageLayout title="Blogs" />
       <div className="blog section-padding">
         <div className="container">

@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Tab, Tabs } from "react-bootstrap";
+import { useTina } from 'tinacms/dist/react'
+import { TinaMarkdown } from 'tinacms/dist/rich-text'
+import client from '../tina/__generated__/client'
 import Layout from "../components/global/layout";
 import { API_URL } from "../config";
 import AllPropertyNav from "../components/all-property-nav";
@@ -9,7 +12,8 @@ import InnerPageLayout from "../components/inner-page-layout";
 import Pagination from "../components/pagination";
 
 const AllProperty = ({ property }) => {
-  const { data } = property;
+  const data = [];
+  // const { data } = property;
   const [view, setView] = useState(false);
 
   const searchProperty = () => {
@@ -54,7 +58,7 @@ const AllProperty = ({ property }) => {
 
   return (
     <Layout>
-      <InnerPageLayout title="All Property" />
+      <InnerPageLayout title="Property Listings" />
       <div className="all-property featured-list section-padding">
         <div className="container">
           <AllPropertyNav
@@ -166,11 +170,46 @@ const AllProperty = ({ property }) => {
 
 export default AllProperty;
 
-// export async function getStaticProps() {
-//   const res = await fetch(`${API_URL}/api/properties?populate=*`);
-//   const property = await res.json();
+export const getStaticProps = async ({ params }) => {
+  // let data = {}
+  // let query = {}
+  // let variables = { relativePath: `${params.filename}.md` }
+  try {
+    // const res = await client.queries.post(variables)
+    // query = res.query
+    // data = res.data
+    // variables = res.variables
+
+    const propertyListData = await client.queries.propertyConnection()
+    propertyTitles = propertyListData.data.propertyConnection.edges.map((prop) => (prop.node._sys.filename))
+
+    console.log(propertyTitles)
+
+    return {
+      propertyTitles
+    }
+  } catch {
+    // swallow errors related to document creation
+  }
+
+  return {
+    props: {
+      // variables: variables,
+      // data: data,
+      // query: query,
+      //myOtherProp: 'some-other-data',
+    },
+  }
+}
+
+// export const getStaticPaths = async () => {
+//   const propertyListData = await client.queries.propertyConnection()
 
 //   return {
-//     props: { property },
-//   };
+//     paths: propertyListData.data.propertyConnection.edges.map((prop) => ({
+//       params: { filename: prop.node._sys.filename },
+//     })),
+//     fallback: false,
+//   }
 // }
+

@@ -11,7 +11,7 @@ import { API_URL } from "../config";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ property }) {
-  const { data } = property;
+  const data = []
 
   return (
     <Layout>
