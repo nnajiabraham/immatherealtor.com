@@ -11,14 +11,11 @@ const PropertyCard = ({ property }) => {
     price,
     slug,
     title,
-    rating,
-    type,
     location,
-    phone,
     beds,
     baths,
-    propertyType,
-  } = property?.attributes;
+    size,
+  } = property;
   return (
     <div className="col-md-6 col-lg-4 mb-4 property">
       <div className="featured-list__item">
@@ -26,16 +23,14 @@ const PropertyCard = ({ property }) => {
           <img
             className="img-fluid"
             src={
-              image?.data !== null
-                ? `${API_URL}${image?.data[0]?.attributes.url}`
+              image !== null
+                // ? `${API_URL}${image?.data[0]?.attributes.url}`
+                ? image
                 : "/images/404.jpg"
             }
             alt={title}
           />
-          {propertyType !== null && (
-            <div className="popular">{propertyType}</div>
-          )}
-          <div className="price">${price} / month</div>
+          <div className="price">${price.toLocaleString()}</div>
         </div>
         <div className="featured-list__item__info">
           <div className="featured-list__item__info--title">
@@ -45,23 +40,23 @@ const PropertyCard = ({ property }) => {
               </Link>
             </h3>
           </div>
-          <div className="featured-list__item__info--ratting">
+          {/* <div className="featured-list__item__info--ratting">
             <span>
               <AiFillStar />
               {rating}
             </span>{" "}
             5 reviews
-          </div>
+          </div> */}
           <ul className="featured-list__item__info--list">
-            <li>
+            {/* <li>
               <span>{type}</span>
-            </li>
+            </li> */}
             <li>
               <GoLocation /> {location}
             </li>
-            <li>
+            {/* <li>
               <MdCall /> <a href={`tel${phone}`}>{phone}</a>
-            </li>
+            </li> */}
           </ul>
           <ul className="featured-list__item__info--expert">
             <li>
@@ -71,7 +66,7 @@ const PropertyCard = ({ property }) => {
               <GiBathtub /> {baths} Baths
             </li>
             <li>
-              <AiOutlineHome /> 6,541 sqft
+              <AiOutlineHome /> {`${size.toLocaleString()} sqft`}
             </li>
           </ul>
         </div>

@@ -12,11 +12,10 @@ const ProductListCard = ({ property }) => {
     slug,
     title,
     location,
-    phone,
     beds,
     baths,
-    propertyType,
-  } = property?.attributes;
+    size
+  } = property;
 
   return (
     <>
@@ -28,16 +27,17 @@ const ProductListCard = ({ property }) => {
                 <img
                   className="img-fluid"
                   src={
-                    image?.data !== null
-                      ? `${API_URL}${image?.data[0]?.attributes.url}`
+                    image !== null
+                      // ? `${API_URL}${image?.data[0]?.attributes.url}`
+                      ? image
                       : "/images/404.jpg"
                   }
                   alt={title}
                 />
-                {propertyType !== null && (
+                {/* {propertyType !== null && (
                   <div className="popular">{propertyType}</div>
                 )}
-                <div className="type">{property.attributes.type}</div>
+                <div className="type">{property.attributes.type}</div> */}
               </div>
             </div>
             <div className="col-md-7 col-lg-6 offset-lg-1">
@@ -45,25 +45,25 @@ const ProductListCard = ({ property }) => {
                 <div className="list-view__info--title">
                   <h3>
                     <Link className="property-name" href={`/property/${slug}`}>
-                      {property.attributes.title}
+                      {title}
                     </Link>
                   </h3>
                 </div>
-                <div className="list-view__info--price">${price} / month</div>
-                <div className="list-view__info--ratting">
+                <div className="list-view__info--price">${price.toLocaleString()}</div>
+                {/* <div className="list-view__info--ratting">
                   <span>
                     <AiFillStar />
                     {property.attributes.rating}
                   </span>{" "}
                   5 reviews
-                </div>
+                </div> */}
                 <ul className="list-view__info--list">
                   <li>
                     <GoLocation /> {location}
                   </li>
-                  <li>
+                  {/* <li>
                     <MdCall /> <Link href={`tel${phone}`}>{phone}</Link>
-                  </li>
+                  </li> */}
                 </ul>
                 <ul className="list-view__info--expert">
                   <li>
@@ -73,7 +73,7 @@ const ProductListCard = ({ property }) => {
                     <GiBathtub /> {baths} Baths
                   </li>
                   <li>
-                    <AiOutlineHome /> 6,541 sqft
+                    <AiOutlineHome /> {`${size.toLocaleString()} sqft`}
                   </li>
                 </ul>
               </div>

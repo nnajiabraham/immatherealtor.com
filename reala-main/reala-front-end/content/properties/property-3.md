@@ -1,4 +1,0 @@
----
-title: property 3
----
-
