@@ -37,16 +37,13 @@ const mockProperty = (title) => ({
 	},
 });
 
-const AllProperty = ({
-	propertyList,
-	propertyTotalCount,
-}) => {
+const AllProperty = ({ propertyList, propertyTotalCount }) => {
 	const data = propertyList ?? [];
 	// const { data } = property;
 	const [view, setView] = useState(false);
 	// console.log("propertyListData ", propertyListData)
 	// console.log("propertyTitles ", propertyTitles)
-	console.log("propertyTotalCount ", propertyTotalCount);
+	// console.log("propertyTotalCount ", propertyTotalCount);
 
 	const searchProperty = () => {
 		var searchKeyword, i, txtValue;
@@ -141,29 +138,29 @@ export default AllProperty;
 
 export const getStaticProps = async ({ params }) => {
 	const propertyListData = await client.queries.propertyConnection();
-	const propertyTotalCount =
-		propertyListData.data.propertyConnection.totalCount;
-	const propertyList = propertyListData.data.propertyConnection.edges.map(
-		(prop) => ({
-			propertyId: prop.node.propertyId,
-			published: prop.node.published,
-			title: prop.node.title,
-			image: prop.node.image,
-			slug: prop.node._sys.filename,
-			price: prop.node.propertyDetails.price,
-			location: prop.node.propertyDetails.location,
-			beds: prop.node.propertyDetails.beds,
-			baths: prop.node.propertyDetails.baths,
-			size: prop.node.propertyDetails.size,
-		})
+  const propertyList = propertyListData.data.propertyConnection.edges
+    .filter((prop) => prop.node.published)
+    .map(
+    (prop) => ({
+          propertyId: prop.node.propertyId,
+          published: prop.node.published,
+          title: prop.node?.title ?? "Missing title",
+          image: prop.node?.image ?? "/images/404.jpg" ,
+          slug: prop.node?._sys.filename,
+          price: prop.node?.propertyDetails?.price?.toLocaleString() ?? 0,
+          location: prop.node?.propertyDetails?.location ?? "Missing location",
+          beds: prop.node?.propertyDetails?.beds ?? 0,
+          baths: prop.node?.propertyDetails?.baths ?? 0,
+          size: prop.node?.propertyDetails?.size.toLocaleString() ?? 0,
+        })
 	);
 
-	console.log(propertyList);
+	// console.log(propertyList);
 
 	return {
 		props: {
-			propertyList,
-			propertyTotalCount: propertyTotalCount ?? 0,
+			propertyList: propertyList.length > 0 ? propertyList : [],
+			propertyTotalCount: propertyList.length,
 		},
 	};
 };

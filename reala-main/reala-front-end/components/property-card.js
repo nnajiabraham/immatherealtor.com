@@ -30,7 +30,7 @@ const PropertyCard = ({ property }) => {
             }
             alt={title}
           />
-          <div className="price">${price.toLocaleString()}</div>
+          <div className="price">${price}</div>
         </div>
         <div className="featured-list__item__info">
           <div className="featured-list__item__info--title">
@@ -66,7 +66,7 @@ const PropertyCard = ({ property }) => {
               <GiBathtub /> {baths} Baths
             </li>
             <li>
-              <AiOutlineHome /> {`${size.toLocaleString()} sqft`}
+              <AiOutlineHome /> {`${size} sqft`}
             </li>
           </ul>
         </div>

@@ -49,7 +49,7 @@ const ProductListCard = ({ property }) => {
                     </Link>
                   </h3>
                 </div>
-                <div className="list-view__info--price">${price.toLocaleString()}</div>
+                <div className="list-view__info--price">${price}</div>
                 {/* <div className="list-view__info--ratting">
                   <span>
                     <AiFillStar />
@@ -73,7 +73,7 @@ const ProductListCard = ({ property }) => {
                     <GiBathtub /> {baths} Baths
                   </li>
                   <li>
-                    <AiOutlineHome /> {`${size.toLocaleString()} sqft`}
+                    <AiOutlineHome /> {`${size} sqft`}
                   </li>
                 </ul>
               </div>

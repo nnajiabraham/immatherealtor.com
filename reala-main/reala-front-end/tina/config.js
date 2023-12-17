@@ -123,7 +123,8 @@ export default defineConfig({
 					{
 						type: "image",
 						name: "image",
-						label: "Cover Image",
+            label: "Cover Image",
+            required: true,
 					},
 					{
 						type: "object",
@@ -152,10 +153,26 @@ export default defineConfig({
 							},
 							{
 								type: "number",
+								name: "garages",
+								label: "Number of Garage",
+							},
+							{
+								type: "number",
 								name: "size",
 								label: "Size(sqft)",
 							},
+							{
+								type: "datetime",
+								name: "yearBuilt",
+								label: "Year Built",
+							},
 						],
+          },
+          {
+						label: "Description",
+						name: "description",
+						type: "rich-text",
+            isBody: true,
 					},
 				],
 			},
