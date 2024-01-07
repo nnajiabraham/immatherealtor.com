@@ -3,6 +3,9 @@ propertyId: 332ab6a2-45a0-4bfa-837e-90b7427dcff5
 published: true
 title: demo3
 image: /images/uploads/property3/property3.jpg
+gallery:
+  - image: /images/uploads/property2/housecover.jpg
+  - image: /images/uploads/property3/property3.jpg
 propertyDetails:
   price: 250000
   location: 200 agric road

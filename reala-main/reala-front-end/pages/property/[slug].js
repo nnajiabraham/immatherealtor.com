@@ -1,3 +1,4 @@
+	import { useRouter } from "next/router";
 import Skeleton from "react-loading-skeleton";
 import client from "../../tina/__generated__/client";
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
@@ -34,6 +35,13 @@ const PropertyPage = ({ /*property, relatedProperty,*/ tinaPropertyData, related
 
 	const { data } = useTina(tinaPropertyData);
 	const property = data.property;
+	const router = useRouter();
+
+	if (property.published === false && process.env.NODE_ENV === 'production') {
+	// if (property.published === false && true) {
+		router.push("/404");
+	}
+
 
 	const propertyInfo = {
 		propertyId: property.propertyId,
