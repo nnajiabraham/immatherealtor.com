@@ -37,10 +37,11 @@ const mockProperty = (title) => ({
 	},
 });
 
-const AllProperty = ({ propertyList, propertyTotalCount }) => {
+const AllProperty = ({ propertyList, propertyTotalCount, propertyListData }) => {
 	const data = propertyList ?? [];
 	// const { data } = property;
 	const [view, setView] = useState(false);
+	// const da = useTina(propertyListData);
 	// console.log("propertyListData ", propertyListData)
 	// console.log("propertyTitles ", propertyTitles)
 	// console.log("propertyTotalCount ", propertyTotalCount);
@@ -148,7 +149,7 @@ export const getStaticProps = async ({ params }) => {
           image: prop.node?.image ?? "/images/404.jpg" ,
           slug: prop.node?._sys.filename,
           price: prop.node?.propertyDetails?.price?.toLocaleString() ?? 0,
-          location: prop.node?.propertyDetails?.location ?? "Missing location",
+          location: prop.node?.propertyDetails?.location ?? "",
           beds: prop.node?.propertyDetails?.beds ?? 0,
           baths: prop.node?.propertyDetails?.baths ?? 0,
           size: prop.node?.propertyDetails?.size.toLocaleString() ?? 0,
@@ -161,6 +162,7 @@ export const getStaticProps = async ({ params }) => {
 		props: {
 			propertyList: propertyList.length > 0 ? propertyList : [],
 			propertyTotalCount: propertyList.length,
+			propertyListData,
 		},
 	};
 };

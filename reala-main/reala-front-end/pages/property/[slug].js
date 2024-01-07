@@ -1,6 +1,7 @@
 import Skeleton from "react-loading-skeleton";
 import client from "../../tina/__generated__/client";
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
+import { useTina } from "tinacms/dist/react";
 import Layout from "../../components/global/layout";
 import PropertyCard from "../../components/property-card";
 import { API_URL } from "../../config";
@@ -28,24 +29,26 @@ import {
 } from "react-icons/fa";
 import md from "markdown-it";
 
-const PropertyPage = ({ property }) => {
-	// const property = properties?.filter((data) => data?.attributes.slug === slug);
+const PropertyPage = ({ /*property, relatedProperty,*/ tinaPropertyData, relatedProperty }) => {
 
-	// const {
-	//   image,
-	//   price,
-	//   title,
-	//   description,
-	//   rating,
-	//   location,
-	//   date,
-	//   beds,
-	//   baths,
-	//   user,
-	//   propertyFeature,
-	//   propertyType,
-	//   categories,
-	// } = property[0]?.attributes;
+
+	const { data } = useTina(tinaPropertyData);
+	const property = data.property;
+
+	const propertyInfo = {
+		propertyId: property.propertyId,
+		published: property.published,
+		title: property?.title ?? "",
+		image: property?.image ?? "/images/404.jpg",
+		description: property?.description ?? "",
+		price: property?.propertyDetails?.price?.toLocaleString() ?? 0,
+		location: property?.propertyDetails?.location ?? "",
+		beds: property?.propertyDetails?.beds ?? 0,
+		baths: property?.propertyDetails?.baths ?? 0,
+		garages: property?.propertyDetails?.garages ?? 0,
+		size: property?.propertyDetails?.size?.toLocaleString() ?? 0,
+		yearBuilt: property?.propertyDetails?.yearBuilt ?? 0,
+	}
 
 	const {
     // image,
@@ -58,16 +61,9 @@ const PropertyPage = ({ property }) => {
     size,
     yearBuilt,
     garages,
-  } = property;
+  } = propertyInfo;
   
 	const image = null;
-	// const relatedProperty = properties?.filter(
-	//   (data) =>
-	//     data?.attributes.categories.data[0]?.attributes.categoryname ===
-	//     categories?.data[0]?.attributes.categoryname
-	// );
-
-	const relatedProperty = [];
 
 	return (
 		<Layout title={title}>
@@ -121,8 +117,9 @@ const PropertyPage = ({ property }) => {
 					</div>
 					<div className="container">
 						<div className="single-page__top">
-							<h3>
-								{title} <span>{"propertyType"}</span>
+								<h3>
+									{title}
+								{/* {title} <span>{"propertyType"}</span> */}
 							</h3>
 							<span className="price">${price}</span>
 							<ul>
@@ -173,7 +170,7 @@ const PropertyPage = ({ property }) => {
 												<li>
 													<span>
 														<FaVoteYea />
-														Built Year
+														Year Built
 													</span>{" "}
 													<span>
 														{new Date(yearBuilt).toLocaleDateString("en-US")}
@@ -275,8 +272,8 @@ const PropertyPage = ({ property }) => {
 								<SectionTitle position="left" title="Similar Properties" />
 								<div className="featured-listing__wrapper">
 									<div className="row">
-										{relatedProperty?.slice(0, 3).map((property) => (
-											<PropertyCard property={property} key={property.id} />
+										{relatedProperty?.map((property) => (
+											<PropertyCard key={property.id} property={property}/>
 										))}
 									</div>
 								</div>
@@ -292,31 +289,53 @@ const PropertyPage = ({ property }) => {
 export default PropertyPage;
 
 export const getStaticProps = async ({ params }) => {
-	const property = (
+	const tinaPropertyData = (
 		await client.queries.property({ relativePath: `${params.slug}.md` })
-	).data.property;
+	);
 
-	property.propertyDetails.price =
-		property.propertyDetails.price.toLocaleString();
-	property.propertyDetails.size =
-		property.propertyDetails.size.toLocaleString();
+	const property = tinaPropertyData.data.property;
+
+	const allProperties = await client.queries.propertyConnection();
+	const threeRandomProperties = allProperties.data.propertyConnection.edges
+		.sort(() => Math.random() - Math.random())
+		.slice(0, 3);
+
+	const relatedProperty = threeRandomProperties
+		.filter((prop) => prop.node.published)
+		.map((prop) => ({
+		propertyId: prop.node.propertyId,
+		published: prop.node.published,
+		title: prop.node?.title ?? "",
+		image: prop.node?.image ?? "/images/404.jpg",
+		description: prop.node?.description ?? "",
+		price: prop.node?.propertyDetails?.price?.toLocaleString() ?? 0,
+		location: prop.node?.propertyDetails?.location ?? "",
+		beds: prop.node?.propertyDetails?.beds ?? 0,
+		baths: prop.node?.propertyDetails?.baths ?? 0,
+		garages: prop.node?.propertyDetails?.garages ?? 0,
+		size: prop.node?.propertyDetails?.size?.toLocaleString() ?? 0,
+		yearBuilt: prop.node?.propertyDetails?.yearBuilt ?? 0,
+		slug: prop.node._sys.filename,
+	}));
 
 	return {
 		props: {
+			tinaPropertyData,
       property: {
         propertyId: property.propertyId,
         published: property.published,
-        title: property?.title ?? "Missing title",
+        title: property?.title ?? "",
         image: property?.image ?? "/images/404.jpg",
-        description: property?.description ?? "Missing description",
-        price: property?.propertyDetails?.price.toLocaleString() ?? 0,
-        location: property?.propertyDetails?.location ?? "Missing location",
+        description: property?.description ?? "",
+        price: property?.propertyDetails?.price?.toLocaleString() ?? 0,
+        location: property?.propertyDetails?.location ?? "",
         beds: property?.propertyDetails?.beds ?? 0,
         baths: property?.propertyDetails?.baths ?? 0,
         garages: property?.propertyDetails?.garages ?? 0,
-        size: property?.propertyDetails?.size.toLocaleString() ?? 0,
+        size: property?.propertyDetails?.size?.toLocaleString() ?? 0,
         yearBuilt: property?.propertyDetails?.yearBuilt ?? 0,
-      },
+			},
+			relatedProperty: relatedProperty,
 		},
 	};
 };

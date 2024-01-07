@@ -7,9 +7,15 @@ import {
 import { GoLocation } from "react-icons/go";
 
 
-const Footer = () => {
+const Footer = ({bgColor}) => {
   return (
-    <div className="footer footer-padding-t">
+    <div
+      className="footer footer-padding-t"
+      style={{
+        backgroundColor: "#f5f5f5"
+        // backgroundColor: bgColor ? bgColor : "#f5f5f5",
+      }}
+    >
       <div className="container">
         <div className="row footer-padding" style={{justifyContent: "space-evenly"}}>
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0" style={{display: "flex", justifyContent: "center"}}>

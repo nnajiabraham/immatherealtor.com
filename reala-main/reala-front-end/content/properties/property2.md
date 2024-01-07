@@ -1,8 +1,8 @@
 ---
 propertyId: fd0a78c3-fe1c-44e9-a0ce-5aa50537c8d2
 published: true
-title: property2
-image: /uploads/property2/housecover2.jpg
+title: demo2
+image: /images/uploads/property2/housecover2.jpg
 propertyDetails:
   price: 400000
   location: 400 hack way gotham new york

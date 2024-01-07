@@ -1,19 +1,19 @@
 ---
 propertyId: ad0a78c3-fe1c-44e9-a0ce-5aa50537c8d2
 published: true
-title: property1
-image: /uploads/property1/housecover.jpg
+title: demo1
+image: /images/uploads/property1/housecover.jpg
 propertyDetails:
-  price: 200000
+  price: 399000
   location: 200 hack way gotham new york
   beds: 5
-  baths: 5
+  baths: 6
   garages: 3
   size: 5000
   yearBuilt: 2001-02-14T08:00:00.000Z
 ---
 
-**Charming 4-Bedroom Family Home in Serene Suburb**
+**Charming 4-Bedroom Family Home in Serene Suburbs**
 
 Welcome to this beautifully maintained 4-bedroom, 3-bathroom home located in the heart of a peaceful and family-friendly suburb. Boasting a generous 2,500 square feet of living space, this property combines modern comfort with classic elegance.
 
@@ -30,6 +30,6 @@ Versatile Rooms: Three additional bedrooms that can also serve as a home office,
 
 Nestled in a serene neighborhood, this home is just minutes away from top-rated schools, parks, shopping centers, and dining options. With its blend of comfort and convenience, this property is a perfect haven for those seeking a tranquil lifestyle with easy access to urban amenities.
 
-Asking Price: ***$499,000***
+Asking Price: ***$399,000***
 
 Experience the perfect blend of luxury and homely charm in this must-see property!

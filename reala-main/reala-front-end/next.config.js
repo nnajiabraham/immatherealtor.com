@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     domains: ['assets.tina.io'],
   },
+  rewrites: async () => {
+    return [
+      {
+        source: '/admin',
+        destination: '/admin/index.html',
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
